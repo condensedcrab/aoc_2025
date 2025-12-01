@@ -48,8 +48,7 @@ class Dial:
         if self.dial_pos == 0:
             self.dial_zero_cross += 1
         
-        print(f"Old pos: {old_pos}, Command Change is: {input}")
-        print(f"    ---> New pos: {self.dial_pos}, Dial Zero Count: {self.dial_zero_count}")
+        print(f"Old pos: {old_pos}, Command Change is: {input} ---> New pos: {self.dial_pos}, Dial Zero Count: {self.dial_zero_count}")
 
         return new_pos
     
@@ -72,3 +71,12 @@ d = Dial(lines)
 d.loop_input()
 
 # %% day 1 - part 2 testing
+with open('ex_day1', 'r') as f:
+    lines = f.readlines() # Reads all lines into a list, including newline characters
+    # To remove newline characters:
+    lines = [line.strip() for line in lines]
+    
+
+d = Dial(lines)
+
+d.loop_input()

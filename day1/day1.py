@@ -41,14 +41,12 @@ class Dial:
         change = abs(new_pos_unmod // 100)
         divisor = change
         
-        print(f"During operation, {divisor} zero crossings found")
         self.dial_zero_cross += divisor
-        print(self.dial_zero_cross)
         
         if self.dial_pos == 0:
             self.dial_zero_cross += 1
         
-        print(f"{input}:{old_pos} --> {self.dial_pos}. Zero-crossing: {self.dial_zero_cross}")
+        print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Zero-crossing: {self.dial_zero_cross}")
 
         return new_pos
     

@@ -41,7 +41,7 @@ class Dial:
         change = abs(new_pos_unmod // 100)
         self.dial_zero_cross += change
         
-        print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Zero-crossing: {self.dial_zero_cross}")
+        print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Change: {change}, total zero-crossings: {self.dial_zero_cross}")
 
         return new_pos
     

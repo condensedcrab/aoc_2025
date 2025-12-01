@@ -36,10 +36,14 @@ class Dial:
             self.dial_zero_count += 1
             
         # part 2 password
-        
         new_pos_unmod = (old_pos + sign_polarity*turn_amt)
         change = abs(new_pos_unmod // 100)
         self.dial_zero_cross += change
+        
+        if change == 0 and self.dial_pos == 0:
+            self.dial_zero_cross +=1 
+            
+        
         
         print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Change: {change}, total zero-crossings: {self.dial_zero_cross}")
 

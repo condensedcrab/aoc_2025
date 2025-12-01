@@ -37,11 +37,11 @@ class Dial:
             
         # part 2 password
         
-        new_pos_unmod = (self.dial_pos + sign_polarity*turn_amt)
+        new_pos_unmod = (old_pos + sign_polarity*turn_amt)
         change = abs(new_pos_unmod // 100)
-        divisor = change
         
-        self.dial_zero_cross += divisor
+        print(change)
+        self.dial_zero_cross += change
         
         print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Zero-crossing: {self.dial_zero_cross}")
 

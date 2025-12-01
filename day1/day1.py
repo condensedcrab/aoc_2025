@@ -43,6 +43,7 @@ class Dial:
         
         print(f"During operation, {divisor} zero crossings found")
         self.dial_zero_cross += divisor
+        print(self.dial_zero_cross)
         
         if self.dial_pos == 0:
             self.dial_zero_cross += 1
@@ -69,3 +70,5 @@ with open('input_day1.txt', 'r') as f:
 d = Dial(lines)
 
 d.loop_input()
+
+# %% day 1 - part 2 testing

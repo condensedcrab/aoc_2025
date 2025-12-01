@@ -37,7 +37,10 @@ class Dial:
             
         # part 2 password
         
-        change = abs(self.dial_pos + sign_polarity*turn_amt)
+        new_pos_unmod = (self.dial_pos + sign_polarity*turn_amt)
+        change = abs(new_pos_unmod // 100)
+        divisor = change
+        
         print(f"During operation, {divisor} zero crossings found")
         self.dial_zero_cross += divisor
         

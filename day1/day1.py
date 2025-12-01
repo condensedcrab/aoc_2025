@@ -51,7 +51,8 @@ class Dial:
 
         return new_pos
     
-    def rotate_circle_2(self,input):
+
+    def rotate_circle2(self,input):
         # parse input string and determine dial turn number
         pat = r'\d+'
         match = re.findall(pat,input)
@@ -66,15 +67,17 @@ class Dial:
             
         for i in range(turn_amt):
             self.dial_pos += sign_polarity
-            if self
-            
-            if 
+            self.dial_pos = self.dial_pos % 100
+            if self.dial_pos == 0:
+                self.dial_zero_cross += 1
+
         return
         
     
     def loop_input(self):
         for i in self.prompt:
-            self.rotate_circle(i)
+            print(f"Prompt: {i}, Total Zero Crossings: {self.dial_zero_cross}")
+            self.rotate_circle2(i)
 
         return
 # %% day 1 - read in input and run through class 

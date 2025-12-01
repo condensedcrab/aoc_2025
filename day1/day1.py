@@ -38,17 +38,39 @@ class Dial:
         # part 2 password
         new_pos_unmod = (old_pos + sign_polarity*turn_amt)
         change = abs(new_pos_unmod // 100)
-        self.dial_zero_cross += change
         
-        if change == 0 and self.dial_pos == 0:
-            self.dial_zero_cross +=1 
-            
+        
+        if change == 0 and new_pos == 0:
+            print("Small turn, adding +1")
+            change += 1
+        
+        self.dial_zero_cross += change
         
         
         print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Change: {change}, total zero-crossings: {self.dial_zero_cross}")
 
         return new_pos
     
+    def rotate_circle_2(self,input):
+        # parse input string and determine dial turn number
+        pat = r'\d+'
+        match = re.findall(pat,input)
+        turn_amt = int(match[0])
+        
+        sign_polarity = 1
+        # parse the polarity of the input
+        if "R" in input:
+            sign_polarity = 1    # R is CW, towards higher
+        elif "L" in input:
+            sign_polarity = -1    # L is CCW, towards lower
+            
+        for i in range(turn_amt):
+            self.dial_pos += sign_polarity
+            if self
+            
+            if 
+        return
+        
     
     def loop_input(self):
         for i in self.prompt:

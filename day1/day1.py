@@ -36,8 +36,10 @@ class Dial:
             self.dial_zero_count += 1
             
         # part 2 password
-        divisor = np.abs((self.dial_pos + sign_polarity*turn_amt) // 100)
+        
+        change = abs(self.dial_pos + sign_polarity*turn_amt)
         print(f"During operation, {divisor} zero crossings found")
+        self.dial_zero_cross += divisor
         
         if self.dial_pos == 0:
             self.dial_zero_cross += 1

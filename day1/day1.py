@@ -43,9 +43,6 @@ class Dial:
         
         self.dial_zero_cross += divisor
         
-        if self.dial_pos == 0:
-            self.dial_zero_cross += 1
-        
         print(f"Input: {input}. {old_pos} --> {self.dial_pos}. Zero-crossing: {self.dial_zero_cross}")
 
         return new_pos

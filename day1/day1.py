@@ -26,10 +26,23 @@ class Dial:
             sign_polarity = -1    # L is CCW, towards lower
     
         # now determine what the new position is and update 0 crossing if needed
-        new_pos = self.dial_pos + sign_polarity*input
+        old_pos = self.dial_pos
+        new_pos = (self.dial_pos + sign_polarity*turn_amt) % 100
+        self.dial_pos = new_pos
         
-    
+        if self.dial_pos == 0:
+            self.dial_zero_count += 1
+        
+        print(f"Old pos: {old_pos}, Command Change is: {input}")
+        print(f"    ---> New pos: {self.dial_pos}")
+
         return new_pos
+    
+    def loop_input(self):
+        for i in self.prompt:
+            self.rotate_circle(i)
+
+        return
 # %% day 1 - read in input and run through class 
 
 with open('input_day1.txt', 'r') as f:
@@ -39,3 +52,5 @@ with open('input_day1.txt', 'r') as f:
     
 
 d = Dial(lines)
+
+d.loop_input

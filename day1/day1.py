@@ -34,7 +34,7 @@ class Dial:
             self.dial_zero_count += 1
         
         print(f"Old pos: {old_pos}, Command Change is: {input}")
-        print(f"    ---> New pos: {self.dial_pos}")
+        print(f"    ---> New pos: {self.dial_pos}, Dial Zero Count: {self.dial_zero_count}")
 
         return new_pos
     
@@ -53,4 +53,4 @@ with open('input_day1.txt', 'r') as f:
 
 d = Dial(lines)
 
-d.loop_input
+d.loop_input()

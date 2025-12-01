@@ -7,6 +7,7 @@ class Dial:
     def __init__(self, prompt):
         self.dial_pos = 50 # range is 0-99
         self.dial_zero_count = 0
+        self.dial_zero_cross = 0
         self.prompt = prompt
         
         return
@@ -30,13 +31,22 @@ class Dial:
         new_pos = (self.dial_pos + sign_polarity*turn_amt) % 100
         self.dial_pos = new_pos
         
+        # part 1 password
         if self.dial_pos == 0:
             self.dial_zero_count += 1
+            
+        # part 2 password
+        divisor = np.abs((self.dial_pos + sign_polarity*turn_amt) // 100)
+        print(f"During operation, {divisor} zero crossings found")
+        
+        if self.dial_pos == 0:
+            self.dial_zero_cross += 1
         
         print(f"Old pos: {old_pos}, Command Change is: {input}")
         print(f"    ---> New pos: {self.dial_pos}, Dial Zero Count: {self.dial_zero_count}")
 
         return new_pos
+    
     
     def loop_input(self):
         for i in self.prompt:

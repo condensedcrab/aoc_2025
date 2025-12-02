@@ -15,15 +15,23 @@ class Day2():
     
     def loop_input(self):
         for i in input_list:
-            self.calc_invalid(i)
+            self.calc_range(i)
         
         return
     
-    def calc_invalid(self,id_range):
+    def calc_range(self,id_range):
         splits = id_range.split("-")
         
         start_id = splits[0]
-        end_id = splits[1]
+        end_id = splits
+        
+        self.solution += calc_invalid(start_id,end_id)
+        
+        return
+    
+    def calc_invalid(start_id,end_id):
+        sum_val = 0
+        
         
         
         return

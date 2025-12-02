@@ -18,6 +18,15 @@ class Day2():
             self.calc_invalid(i)
         
         return
+    
+    def calc_invalid(self,id_range):
+        splits = id_range.split("-")
+        
+        start_id = splits[0]
+        end_id = splits[1]
+        
+        
+        return
 
 
 
@@ -36,4 +45,6 @@ with open('input_day2.txt', mode='r', encoding='utf-8') as file:
             else:
                 input.append(r)
 
-print(input)
+# print(input)
+
+d = Day2(input)

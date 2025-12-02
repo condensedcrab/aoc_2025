@@ -36,8 +36,10 @@ class Day2():
         if len(str_id) % 2 != 0:
             return 0
         else:
-            
-            return id
+            midpoint_idx = len(str_id) // 2
+            if str_id[:midpoint_idx] == str_id[midpoint_idx:]:
+                print(str_id)       
+                return id
 
 
 

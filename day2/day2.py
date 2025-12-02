@@ -44,6 +44,18 @@ class Day2():
         self.solution += sum_val
         return
 
+    def calc_invalid2(self,id):
+        sum_val = 0 
+        str_id = str(id)
+        
+        
+        
+        
+        
+        
+        self.solution += sum_val
+        return
+
 # % part 1 input read-in
 import csv
 input = []

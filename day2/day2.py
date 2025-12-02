@@ -14,7 +14,7 @@ class Day2():
     
     
     def loop_input(self):
-        for i in input_list:
+        for i in self.input_list:
             self.calc_range(i)
         
         return
@@ -22,19 +22,22 @@ class Day2():
     def calc_range(self,id_range):
         splits = id_range.split("-")
         
-        start_id = splits[0]
-        end_id = splits
-        
-        self.solution += calc_invalid(start_id,end_id)
+        start_id = int(splits[0])
+        end_id = int(splits[-1])
+        for id in range(start_id,end_id+1):
+            print(id)
+            self.solution += self.calc_invalid(id)      
         
         return
     
-    def calc_invalid(start_id,end_id):
-        sum_val = 0
+    def calc_invalid(self,id):
+        str_id = str(id)
         
-        
-        
-        return
+        if len(str_id) % 2 != 0:
+            return 0
+        else:
+            
+            return id
 
 
 
@@ -56,3 +59,4 @@ with open('input_day2.txt', mode='r', encoding='utf-8') as file:
 # print(input)
 
 d = Day2(input)
+d.loop_input()

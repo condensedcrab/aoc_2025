@@ -6,10 +6,18 @@ import re
 
 class Day2():
 
-    def __init__(self):
+    def __init__(self,input_list):
         
+        self.input_list = input_list
+        self.solution = 0
         return
     
+    
+    def loop_input(self):
+        for i in input_list:
+            self.calc_invalid(i)
+        
+        return
 
 
 

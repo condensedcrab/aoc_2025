@@ -50,18 +50,16 @@ class Day2():
         str_id = str(id)
         
         midpoint_idx = len(str_id) // 2 + 1
-        
+        print(f"mid point is {str_id[midpoint_idx]}")
         for i in range(1,midpoint_idx):
-
-            pat = rf"{str_id[:i]}+"
-            matches = re.findall(pat,str_id)
-            if matches[0] == str_id:
+            pat = rf"^({str_id[:i]})\1+$"
+            if re.match(pat,str_id):
                 print(f"Pattern match for '{str_id[:i]}' in {str_id}.")
                 sum_val = id
                 break
         
         self.solution += sum_val
-        return
+        return sum_val
 
 # % part 1 input read-in
 import csv

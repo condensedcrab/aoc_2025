@@ -48,14 +48,16 @@ class Day2():
         sum_val = 0 
         str_id = str(id)
         
-        midpoint_idx = len(str_id) // 2
+        midpoint_idx = len(str_id) // 2 + 1
         
-        for i in range(midpoint_idx):
-            print(f"Trying pattern '{i}' in {str_id}. ")
+        for i in range(1,midpoint_idx):
+
             pat = rf"{str_id[:i]}+"
             matches = re.findall(pat,str_id)
-        
-        
+            if matches[0] == str_id:
+                print(f"Trying pattern '{str_id[:i]}' in {str_id}. Match found.")
+                sum_val = id
+                break
         
         self.solution += sum_val
         return

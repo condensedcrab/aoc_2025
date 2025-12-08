@@ -20,6 +20,7 @@ class Day2():
         return
     
     def calc_range(self,id_range):
+        print(f"Input range is: {id_range}")
         splits = id_range.split("-")
         
         start_id = int(splits[0])
@@ -55,7 +56,7 @@ class Day2():
             pat = rf"{str_id[:i]}+"
             matches = re.findall(pat,str_id)
             if matches[0] == str_id:
-                print(f"Trying pattern '{str_id[:i]}' in {str_id}. Match found.")
+                print(f"Pattern match for '{str_id[:i]}' in {str_id}.")
                 sum_val = id
                 break
         

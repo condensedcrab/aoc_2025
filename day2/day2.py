@@ -25,24 +25,25 @@ class Day2():
         start_id = int(splits[0])
         end_id = int(splits[-1])
         for id in range(start_id,end_id+1):
-            self.calc_invalid(id)      
+            self.calc_invalid2(id)      
         
         return
     
-    def calc_invalid(self,id):
-        sum_val = 0 
-        str_id = str(id)
+    # def calc_invalid(self,id):
+    #     sum_val = 0 
+    #     str_id = str(id)
         
-        if len(str_id) % 2 != 0:
-            sum_val = 0
-        else:
-            midpoint_idx = len(str_id) // 2
-            if str_id[:midpoint_idx] == str_id[midpoint_idx:]:
-                print(f"Invalid ID: {str_id}")       
-                sum_val = id
+    #     if len(str_id) % 2 != 0:
+    #         sum_val = 0
+    #     else:
+    #         midpoint_idx = len(str_id) // 2
+    #         if str_id[:midpoint_idx] == str_id[midpoint_idx:]:
+    #             print(f"Invalid ID: {str_id}")       
+    #             sum_val = id
 
-        self.soluti
-    
+    #     self.solution += sum_val
+    #     return
+
     def calc_invalid2(self,id):
         sum_val = 0 
         str_id = str(id)
@@ -79,4 +80,3 @@ with open('input_day2.txt', mode='r', encoding='utf-8') as file:
 d = Day2(input)
 d.loop_input()
 print(f"{d.solution}")
-

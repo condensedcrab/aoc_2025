@@ -48,7 +48,10 @@ class Day2():
         sum_val = 0 
         str_id = str(id)
         
+        midpoint_idx = len(str_id) // 2
         
+        for i in range(midpoint_idx+1):
+            print(f"Trying pattern '{i}' in {id}. ")
         
         
         

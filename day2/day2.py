@@ -41,18 +41,18 @@ class Day2():
                 print(f"Invalid ID: {str_id}")       
                 sum_val = id
 
-        self.solution += sum_val
-        return
-
+        self.soluti
+    
     def calc_invalid2(self,id):
         sum_val = 0 
         str_id = str(id)
         
         midpoint_idx = len(str_id) // 2
         
-        for i in range(midpoint_idx+1):
-            print(f"Trying pattern '{i}' in {id}. ")
-        
+        for i in range(midpoint_idx):
+            print(f"Trying pattern '{i}' in {str_id}. ")
+            pat = rf"{str_id[:i]}+"
+            matches = re.findall(pat,str_id)
         
         
         
@@ -79,3 +79,4 @@ with open('input_day2.txt', mode='r', encoding='utf-8') as file:
 d = Day2(input)
 d.loop_input()
 print(f"{d.solution}")
+
